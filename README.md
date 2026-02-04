@@ -1,6 +1,19 @@
-# Data Warehouse Project
+# Data Warehouse and Analytics Project
 
-This is a learning project where I built a simple Data Warehouse and analytics layer in SQL Server.  
+This is a learning project where I built a simple Data Warehouse in SQL Server and a basic analytics layer on top of it.  
+The goal was to understand the full workflow: ingest raw data, clean and standardize it, model it for reporting, and run analytics queries.
+
+## Project architecture (high level)
+
+![Data Architecture](data_architecture.png)
+
+The project follows a simple Medallion Architecture flow:
+
+**Sources (CSV files: ERP + CRM)**  
+→ **Bronze Layer (raw tables, no transformations)**  
+→ **Silver Layer (cleaned + standardized tables)**  
+→ **Gold Layer (business-ready views, star schema)**  
+→ **Consumption (BI/reporting, ad-hoc SQL, ML-ready outputs)**
 
 ## What’s included
 
@@ -10,14 +23,14 @@ This is a learning project where I built a simple Data Warehouse and analytics l
   - **Silver** — cleaned and standardized data
   - **Gold** — analytics-ready model (star schema)
 - Fact and dimension tables for reporting
-- SQL queries for analytics (sales, customers, customers, products)
+- SQL queries for analytics (sales, customers, products)
 
 ## What I learned (high level)
 
 During this project I practiced:
 
 - how a modern DWH is structured (Bronze / Silver / Gold)
-- how to organize ETL scripts by layers
+- how to organize ETL scripts and layers
 - basic data cleaning in SQL (NULL handling, duplicates, data types, standardization)
 - dimensional modeling for analytics (fact/dim tables, star schema)
 - writing SQL queries for business metrics and reporting
@@ -28,8 +41,4 @@ During this project I practiced:
 - SQL Server Management Studio (SSMS)
 
 ## Repository structure
-
-- datasets/ - raw CSV files
-- scripts/ - SQL scripts (bronze/silver/gold)
-- tests/ - quality checks / test scripts
 
